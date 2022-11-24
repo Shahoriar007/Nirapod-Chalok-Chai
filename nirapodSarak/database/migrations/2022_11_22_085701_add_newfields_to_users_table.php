@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             
             // Personal Info
-            $table->string('phone');
+            $table->string('phone')->unique();;
             // $table->string('name');
             $table->string('nid');
             $table->string('gender');

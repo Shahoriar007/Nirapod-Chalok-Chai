@@ -43,8 +43,8 @@
                             <div class="row">
 
                                 <div class="input__box col-md-12">
-                                    <span class="details">Email</span>
-                                    <input id="email" type="email" name="email" placeholder="01353456789" required>
+                                    <span class="details">Email/phone/name</span>
+                                    <input id="login" type="text" name="login" placeholder="01353456789" required>
                                 </div>
 
                                 <div class="input__box col-md-12">
