@@ -27,7 +27,7 @@
                 <div class="col-md-8 .reg-box mx-auto">
 
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="user__details">
@@ -92,7 +92,7 @@
                                     <div class="avatar-upload">
                                         <div class="avatar-edit">
                                             
-                                            <input id="photo" type="text" name="photo">
+                                            <input id="photo" type="file" name="photo">
                                             <label ></label>
                                         </div>
                                         <div class="avatar-preview">
@@ -101,6 +101,11 @@
                                         </div>
                                     </div>
                                 </div> -->
+
+                                <div class="input__box col-md-6">
+                                    <span class="details" >Image</span>
+                                    <input id="photo" type="file" name="photo" >
+                                </div>
 
                                 <!-- blood group -->
                                 <div class="input__box col-md-6">

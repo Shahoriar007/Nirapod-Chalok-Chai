@@ -38,7 +38,14 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
 
+            'photo' => ['file', 'mimes:jpg,png,gif'],
+
         ]);
+
+        $path = null;
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->storePublicly('photos');
+        }
 
         $user = User::create([
             'name' => $request->name,
@@ -51,7 +58,7 @@ class RegisteredUserController extends Controller
             'gender' => $request->gender,
             'birthDate' => $request->birthDate,
             'bloodGroup' => $request->bloodGroup,
-            'photo' => $request->photo,
+            'photo' => $path,
 
             // Vehicle Info
             'city' => $request->city,
